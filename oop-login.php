@@ -59,3 +59,21 @@ class Login extends User
         }
     }
 }
+// 2. tidak ada yang digantikan dari kelas induk ke kelas turunannya.
+    // karena metode metode dari parent class nya digunakan ke kelas turunannya
+
+class Admin extends User 
+{
+    private $peran;
+    public function __construct($username,$password, $fullname)
+    {
+        parent::__construct($username, $password, $fullname);
+        $this->peran = $peran;
+    }
+
+    public function tampilPeran()
+    {
+        return "Peran User :" . $this->peran;
+    }
+}
+?>
